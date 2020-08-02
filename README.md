@@ -4,18 +4,16 @@
 
 ## 安装
 
----
-
 使用npm安装插件：
 > npm i vue-music-player
 
 然后，在您的 main.js 中，添加：
-> import vueMusicPlayer from 'vue-music-player'
+```
+import vueMusicPlayer from 'vue-music-player'
 Vue.use(vueMusicPlayer)
+```
 
 ## 用法
-
----
 
 直接通过方法调用即可：
 ```
