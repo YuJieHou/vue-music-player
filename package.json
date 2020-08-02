@@ -10,6 +10,8 @@
     "play",
     "audio",
     "vue-music",
+    "vue-audio",
+    "player-audio",
     "vue-music-player"
   ],
   "files": [

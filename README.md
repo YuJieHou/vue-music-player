@@ -1,18 +1,33 @@
 # vue-music-player
 
-> A Vue.js project
+> 这是一个音乐播放器
 
-## Build Setup
+## 安装
 
-``` bash
-# install dependencies
-npm install
+---
 
-# serve with hot reload at localhost:8080
-npm run dev
+使用npm安装插件：
+> npm i vue-music-player
 
-# build for production with minification
-npm run build
+然后，在您的 main.js 中，添加：
+> import vueMusicPlayer from 'vue-music-player'
+Vue.use(vueMusicPlayer)
+
+## 用法
+
+---
+
+直接通过方法调用即可：
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+let option = {
+  playList: [{ // 音频播放列表
+    src: '' // 音频路径
+  }],
+  currentIndex: 0,  //  当前播放音频，所在播放列表的下标
+  isPlay: false //  是否初始化的时候播放音频
+}
+this.$initAudio(option) //  初始化
+this.$playAudio() //  开始播放
+this.$pauseAudio()  //  暂停播放
+this.$audioClose()  //  清除
+```
