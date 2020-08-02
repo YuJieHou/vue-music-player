@@ -1,7 +1,7 @@
 {
   "name": "vue-music-player",
   "description": "Vue components",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "author": "YuJieHou <2495653065@qq.com>",
   "license": "MIT",
   "private": false,
@@ -9,7 +9,7 @@
     "vue",
     "play",
     "audio",
-    "vue-play",
+    "vue-music",
     "vue-music-player"
   ],
   "files": [

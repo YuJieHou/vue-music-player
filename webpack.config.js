@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = env => {
   return {
     mode: 'development',
-    entry: env.lib ? "./packages/index.js" : "./examples/main.js",
+    entry: env.lib ? "./packages/vue-music-player/index.js" : "./examples/main.js",
     output: {
         // 打包文件的生成路径
         path: path.resolve(__dirname, env.lib ? "./lib" : "./dist"),

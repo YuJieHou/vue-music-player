@@ -1,9 +1,9 @@
 // 引入组件
-import vuePlayAudio from './src/index'
+import vueMusicPlay from './src/index'
 
-vuePlayAudio.install = Vue => {
+vueMusicPlay.install = Vue => {
   // 扩展 vue 插件
-  const AudioController= Vue.extend(vuePlayAudio);
+  const AudioController= Vue.extend(vueMusicPlay);
   var instance = new AudioController().$mount(document.createElement('div'))
 
   Vue.prototype.IS_PLAY = false // 是否播放，默认为：false
@@ -43,11 +43,11 @@ vuePlayAudio.install = Vue => {
     // }, option.duration)
   }
 
-  Vue.component(vuePlayAudio.name, vuePlayAudio)
+  Vue.component(vueMusicPlay.name, vueMusicPlay)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(vuePlayAudio);
+    window.Vue.use(vueMusicPlay);
 }
 
-export default vuePlayAudio;
+export default vueMusicPlay;
