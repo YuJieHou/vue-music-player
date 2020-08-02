@@ -6,7 +6,7 @@
 
 使用npm安装插件：
 ```
-npm i vue-music-player
+npm i vue-music-player --save
 ```
 
 然后，在您的 main.js 中，添加：
