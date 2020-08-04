@@ -60,12 +60,44 @@ module.exports = env => {
           loader: 'babel-loader',
           exclude: /node_modules/
         },
+        // {
+        //   test:/\.(png|jpg|gif|woff|svg|eot|ttf)\??.*$/,
+        //   use: [{
+        //     loader: "url-loader",
+        //     options:{
+        //       limit: 8192, //单位byte，小于8KB的图片都会被编码(base64)放打包在js中
+        //       name: 'images/[name].[ext]' //图片复制到指定位置
+        //     }
+        //   },{
+        //     loader: 'image-webpack-loader',
+        //     options: {
+        //       disable: true // webpack@2.x and newer
+        //     }
+        //   }]
+        // },
         {
-          test: /\.(png|jpg|gif|svg)$/,
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]?[hash]'
-          }
+          test: /\.html$/,
+          use: [
+            {
+              loader: 'html-loader',
+              options: {
+                attrs: ['img:src', 'img:data-src', 'audio:src'],
+                minimize: false,
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpg|gif|bmp|jpeg|svg)$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options:{
+                limit: 1024 * 10, //限制打包图片的大小：
+                esModule: false //  webpack打包html里面img后src为“[object Module]”
+              }
+            }
+          ]
         }
       ]
     },

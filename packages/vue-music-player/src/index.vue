@@ -45,9 +45,9 @@
                 <span>音乐名称</span>
               </div>
               <div>
-                <span>{{ audioAllDuration | formatTime }}</span>
-                <span> / </span>
                 <span>{{ audioCurrentTime | formatTime }}</span>
+                <span> / </span>
+                <span>{{ audioAllDuration | formatTime }}</span>
               </div>
             </div>
             <div>
@@ -257,12 +257,12 @@ export default {
       this.playAudio()
     },
     getAudioTime() {
-      let time = 0
-      if (parseInt(audioPlayer.currentTime) !== Number(time)) {
-        time = parseInt(audioPlayer.currentTime)
+      let currentTime = 0
+      if (parseInt(audioPlayer.currentTime) !== Number(currentTime)) {
+        currentTime = parseInt(audioPlayer.currentTime)
 
         // 获取当前播放时长
-        this.audioCurrentTime = time
+        this.audioCurrentTime = currentTime
 
         // 获取音频的总时长
         this.audioAllDuration = audioPlayer.duration
