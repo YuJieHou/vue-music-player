@@ -60,21 +60,16 @@ module.exports = env => {
           loader: 'babel-loader',
           exclude: /node_modules/
         },
-        // {
-        //   test:/\.(png|jpg|gif|woff|svg|eot|ttf)\??.*$/,
-        //   use: [{
-        //     loader: "url-loader",
-        //     options:{
-        //       limit: 8192, //单位byte，小于8KB的图片都会被编码(base64)放打包在js中
-        //       name: 'images/[name].[ext]' //图片复制到指定位置
-        //     }
-        //   },{
-        //     loader: 'image-webpack-loader',
-        //     options: {
-        //       disable: true // webpack@2.x and newer
-        //     }
-        //   }]
-        // },
+        {
+          test:/\.(png|jpg|gif|woff|svg|eot|ttf)\??.*$/,
+          use: [{
+            loader: "url-loader",
+            options:{
+              limit: 1024 * 10, //限制打包图片的大小：
+              esModule: false //  webpack打包html里面img后src为“[object Module]”
+            }
+          }]
+        },
         {
           test: /\.html$/,
           use: [
@@ -83,18 +78,6 @@ module.exports = env => {
               options: {
                 attrs: ['img:src', 'img:data-src', 'audio:src'],
                 minimize: false,
-              }
-            }
-          ]
-        },
-        {
-          test: /\.(png|jpg|gif|bmp|jpeg|svg)$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options:{
-                limit: 1024 * 10, //限制打包图片的大小：
-                esModule: false //  webpack打包html里面img后src为“[object Module]”
               }
             }
           ]
@@ -110,7 +93,18 @@ module.exports = env => {
     devServer: {
       historyApiFallback: true,
       noInfo: true,
-      overlay: true
+      overlay: true,
+      proxy: {
+        '/r.s': {//匹配根路径
+          target: 'http://search.kuwo.cn',  // 后台接口域名
+          ws: true,        //如果要代理 websockets，配置这个参数
+          secure: false,  // 如果是https接口，需要配置这个参数
+          changeOrigin: true,  //是否跨域
+          pathRewrite:{
+            '^/':''
+          }
+        }
+      }
     },
     performance: {
       hints: false

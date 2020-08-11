@@ -19,8 +19,8 @@ vueMusicPlay.install = Vue => {
     }
 
     // 添加到 body 后面
-    document.body.appendChild(instance.$el)
     // instance.$mount(instance.$el)
+    document.body.appendChild(instance.$el)
   }
 
   Vue.prototype.$playAudio = () => {
@@ -32,6 +32,9 @@ vueMusicPlay.install = Vue => {
   }
 
   Vue.prototype.$audioClose = () => {
+    console.log(instance.$el)
+    console.log(document)
+    console.log(document.body)
     document.body.removeChild(instance.$el)
     instance.playList = []
     instance.currentIndex = 0

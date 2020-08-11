@@ -1,0 +1,184 @@
+{
+  "id": "1985085",
+  "name": "music",
+  "font_family": "icon",
+  "css_prefix_text": "icon",
+  "description": "音乐 icon",
+  "glyphs": [
+    {
+      "icon_id": "15262837",
+      "name": "1_music89",
+      "font_class": "1_music89",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "16314020",
+      "name": "1_music90",
+      "font_class": "1_music90-copy",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "16314021",
+      "name": "1_music91",
+      "font_class": "1_music91-copy",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "16313575",
+      "name": "San Mi App outline i",
+      "font_class": "SanMiAppoutlinei3-copy",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "16313580",
+      "name": "1_music80",
+      "font_class": "1_music80-copy",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "16313438",
+      "name": "San Mi App outline i",
+      "font_class": "SanMiAppoutlinei1-copy",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "1488891",
+      "name": "查询",
+      "font_class": "chaxun",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "1488892",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1488893",
+      "name": "单曲循环",
+      "font_class": "danquxunhuan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "1488896",
+      "name": "话筒",
+      "font_class": "huatong",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1488897",
+      "name": "减少",
+      "font_class": "jianshao",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1488898",
+      "name": "静音",
+      "font_class": "jingyin",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1488899",
+      "name": "列表循环",
+      "font_class": "liebiaoxunhuan",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1488900",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1488901",
+      "name": "声音",
+      "font_class": "shengyin",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "1488903",
+      "name": "随机",
+      "font_class": "suiji",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1488905",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1488907",
+      "name": "禁止",
+      "font_class": "jinzhi",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "1488909",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "1488911",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "1488912",
+      "name": "音乐",
+      "font_class": "zengjia",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "1488916",
+      "name": "平衡器",
+      "font_class": "pinghengqi",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "14191051",
+      "name": "发射塔",
+      "font_class": "fasheta",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "16313515",
+      "name": "San Mi App outline i",
+      "font_class": "SanMiAppoutlinei-copy",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "16313562",
+      "name": "San Mi App outline i",
+      "font_class": "SanMiAppoutlinei2-copy",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    }
+  ]
+}

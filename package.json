@@ -1,7 +1,7 @@
 {
   "name": "vue-music-player",
   "description": "Vue components",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "author": "YuJieHou <2495653065@qq.com>",
   "license": "MIT",
   "private": false,
@@ -30,6 +30,7 @@
     "lib": "cross-env NODE_ENV=production webpack --env.lib --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "css-loader": "^4.2.0",
     "file-loader": "^1.1.11",
     "html-loader": "^1.1.0",

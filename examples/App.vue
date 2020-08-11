@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <div>
+      <div class="music-list">
+        <div>音乐列表</div>
+        <div></div>
+      </div>
       <h1 @click="initAudio">点击打开音乐</h1>
       <h1 @click="playAudio">点击播放音乐</h1>
       <h1 @click="pauseAudio">点击暂停音乐</h1>
@@ -10,6 +14,7 @@
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
   name: 'app',
   data () {
@@ -19,6 +24,26 @@ export default {
     }
   },
   methods:{
+    initData(){
+      const param = {
+        all: '周杰伦',
+        ft: 'music',
+        itemset: 'web_2013',
+        client: 'kt',
+        pn: 0,
+        rn: 5,
+        rformat: 'json',
+        encoding: 'utf8'
+      }
+      Axios.get('/r.s', {
+        params: param
+      }).then(res=>{
+        console.log(res)
+        console.log(eval('(' + res.data + ')'))
+      }).catch(error => {
+        console.log(error)
+      });
+    },
     // 使用
     initAudio(){
       let option = {
@@ -26,7 +51,7 @@ export default {
           src: 'http://wechatapppro-1252524126.file.myqcloud.com/appG1VMUALC2470/audio_compressed/1505377565_4fd15d83213bceb23a97ad6af45f1dae.mp3'
         }],
         currentIndex: Math.floor(Math.random() * 1),
-        isPlay: false
+        isPlay: true
       }
       this.$initAudio(option)
     },
@@ -41,7 +66,7 @@ export default {
     }
   },
   mounted() {
-    this.initAudio()
+    this.initData()
   }
 }
 </script>

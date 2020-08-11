@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-// 全局引用
-// import pkgName from '../packages'
-// Vue.use(pkgName)
-
 // 单独引入
+
 import vueMusicPlayer from '../packages/vue-music-player'
 Vue.use(vueMusicPlayer)
 
