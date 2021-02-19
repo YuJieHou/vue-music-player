@@ -7,10 +7,6 @@
       @error="error">
       你的浏览器不支持audio标签
     </audio>
-    <h1>{{ isMobile?'移动端':'PC 端' }}</h1>
-    <div>
-      <div>当前播放列表的下标：{{ currentIndex }} - {{ volumeVal }}</div>
-    </div>
     <div class="music-player-pc music-player-bottom" v-if="!isMobile">
       <div class="music-player-mask">
         <!-- <img src="./assets/images/cover_audio.png" alt=""> -->
@@ -18,7 +14,7 @@
       <div class="music-player music-player-col">
         <div class="music-player-panel music-player-panel-center">
           <div class="music-player-head">
-            <img v-if="imgUrl" :src="imgUrl" alt="">
+            <img v-if="imgUrl" :src="imgUrl" alt="" @error="imgError">
             <img v-else src="./assets/images/cover_audio.png" alt="">
           </div>
           <div class="music-player-info">
@@ -166,8 +162,12 @@ export default {
     }
   },
   methods: {
+    /** 图片加载失败事件 */
+    imgError(){
+      this.imgUrl = ""
+    },
+    /** 音乐加载失败事件 */
     error() {
-      console.log('播放失败')
       this.isLoading = false
     },
     /** 设置定时检测 */
@@ -180,6 +180,7 @@ export default {
         audioPlayer.paused ? this.isPlay = false : this.isPlay = true
       }, 500)
     },
+    /** 重置数据 */
     reastData(){
       /** 播放结束后重置数据 */
       clearInterval(this.audioInterval)
@@ -229,7 +230,6 @@ export default {
     },
     /** 滑动进度条 */
     currentTimeChange(value) {
-      // 设置播放时间
       let currentTime = Number(this.audioAllDuration * Number(value) / 100)
       audioPlayer.currentTime = parseInt(currentTime)
     },
@@ -240,7 +240,6 @@ export default {
     },
     /** 设置播放音量 */
     changeVolume(val){
-      console.log(val)
       audioPlayer.volume = val
       this.volumeVal = val
     },
@@ -306,13 +305,14 @@ export default {
         }
       }
     },
+    /** 获取百分比 */
     percentage(val){
       if(val >= 0){
         return Number(val.toFixed(3) * 100)
       }else{
         return 0
       }
-    },
+    }
   },
   //注册局部组件指令
   directives: {
@@ -321,12 +321,10 @@ export default {
         let dragBox = el; //获取当前元素
         dragBox.onmousedown = e => {
           //算出鼠标相对元素的位置
-          let disX = e.clientX - dragBox.offsetLeft;
-          // let disY = e.clientY - dragBox.offsetTop;
+          let disX = e.clientX - dragBox.offsetLeft
+
           document.onmousemove = e => {
-            //用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
-            let left = e.clientX - disX;
-            // let top = e.clientY - disY;
+            let left = e.clientX - disX
 
             //移动当前元素
             if(left >= 400){
@@ -337,14 +335,14 @@ export default {
               dragBox.style.left = (left / 400).toFixed(3)*100 + '%';
               audioPlayer.currentTime = (left / 400).toFixed(3) * audioPlayer.duration
             }
-          };
+          }
           document.onmouseup = e => {
             //鼠标弹起来的时候不再移动
             document.onmousemove = null;
             //预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
             document.onmouseup = null;
-          };
-        };
+          }
+        }
       }
     },
     down: function(el) {

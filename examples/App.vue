@@ -48,7 +48,10 @@ export default {
     initAudio(){
       let option = {
         playList: [{
-          src: 'http://wechatapppro-1252524126.file.myqcloud.com/appG1VMUALC2470/audio_compressed/1505377565_4fd15d83213bceb23a97ad6af45f1dae.mp3'
+          title: '123',
+          src: 'http://wechatapppro-1252524126.file.myqcloud.com/appG1VMUALC2470/audio_compressed/1505377565_4fd15d83213bceb23a97ad6af45f1dae.mp3',
+          // imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597136193232&di=55f0598d285a8cbf5b17fd98cb46eb87&imgtype=0&src=http%3A%2F%2Fp2.so.qhimgs1.com%2Ft01dfcbc38578dac4c2.jpg'
+          imgUrl: 'jpg'
         }],
         currentIndex: Math.floor(Math.random() * 1),
         isPlay: true
